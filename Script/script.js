@@ -7,7 +7,7 @@ let bok = { title: "abc", author: "Jhon", numPages: 102 };
 let array = [
   { title: "ABCD", author: "Stina", numPages: 101 },
   { title: "ABCE", author: "Ela", numPages: 202 },
-  { title: "ABCDE", author: "Ela", numPages: 303 },
+  { title: "ABCDE", author: "Ela", numPages: 303 }
 ];
 
 let result = array[1].numPages; // för att testa
@@ -15,14 +15,16 @@ console.log("ex-2: " + result);
 
 // ex-3.
 
-function lookForTitle(nyTitle) {
-  if (array[2].title == nyTitle) {
-    return array[2];
+function lookForTitle(list,nyTitle) {
+  for (let i of list) {
+    if (i["title"] == nyTitle) {
+      return i;
+    }
   }
   return null;
 }
 
-console.log(lookForTitle("ABCDE"));
+console.log(lookForTitle(array,"ABCDE"));
 
 // letterFrequency
 
@@ -58,3 +60,4 @@ function main() {
 }
 
 main();
+
